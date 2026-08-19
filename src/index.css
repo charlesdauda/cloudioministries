@@ -1,1 +1,63 @@
+@import 'tailwindcss';
+:root {
+  --color-ink: #1c130d;
+  --color-night: #1b120d;
+  --color-gold: #cc9c60;
+  --color-gold-light: #e0b378;
+}
 
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Jost', sans-serif;
+  background-color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-sans {
+  font-family: 'Jost', sans-serif;
+}
+
+/* ---------- Hero: slow continuous zoom on the active slide ---------- */
+@keyframes hero-zoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.12);
+  }
+}
+
+.hero-kenburns {
+  animation: hero-zoom 5000ms cubic-bezier(0.16, 0.6, 0.3, 1) forwards;
+  will-change: transform;
+}
+
+/* ---------- Hero: warm dark shade so white text stays legible ---------- */
+/* ---------- Hero: warm dark shade so white text stays legible ---------- */
+.hero-shade {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 38%, rgba(22, 14, 9, 0.12) 0%, rgba(15, 9, 6, 0.36) 62%, rgba(9, 5, 3, 0.55) 100%),
+    linear-gradient(180deg, rgba(11, 7, 4, 0.4) 0%, rgba(11, 7, 4, 0.12) 26%, rgba(10, 6, 4, 0.18) 60%, rgba(8, 5, 3, 0.5) 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-kenburns {
+    animation: none;
+  }
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
