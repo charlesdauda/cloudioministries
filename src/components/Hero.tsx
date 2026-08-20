@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
-import heroImage1 from '../assets/images/apshero1.png';
+import heroImage1 from '../assets/images/apshero.png';
 import heroImage2 from '../assets/images/apshero2.png';
-import heroImage3 from '../assets/images/apshero3.png';
 
 interface Slide {
   image: string;
@@ -13,21 +12,15 @@ interface Slide {
 const SLIDES: Slide[] = [
   {
     image: heroImage1,
-    eyebrow: 'Christian Church Athos',
-    heading: 'Continue the Great Work of Jesus Christ on Earth',
+    eyebrow: 'Teaching Truth · Building Leaders · Transforming Nations',
+    heading: 'Revealing Truth, Transforming Destinies',
     cta: 'Read More',
   },
   {
     image: heroImage2,
-    eyebrow: 'Christian Church Athos',
-    heading: 'Come As You Are, Leave Transformed by Grace',
-    cta: 'Join a Service',
-  },
-  {
-    image: heroImage3,
-    eyebrow: 'Christian Church Athos',
-    heading: 'A Sanctuary of Faith, Hope and Love',
-    cta: 'Plan Your Visit',
+    eyebrow: 'Sound Doctrine · Lasting Impact · Global Reach',
+    heading: 'Building Spiritual Colossals For Yeshuah',
+    cta: 'Read More',
   },
 ];
 
