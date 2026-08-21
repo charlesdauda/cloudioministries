@@ -63,14 +63,6 @@ const About = () => {
               </p>
             </div>
 
-            {/* BUTTON */}
-            <a
-              href="#"
-              className="mt-13 inline-flex h-15.75 w-56.75 items-center justify-center bg-[#cc9c60] font-sans text-[14px] font-bold tracking-widest text-white no-underline transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#e0b378]"
-            >
-              ABOUT US
-            </a>
-
             {/* BIBLE */}
             <BibleIllustration />
 
