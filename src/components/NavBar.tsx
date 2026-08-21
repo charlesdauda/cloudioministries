@@ -12,18 +12,22 @@ const NAV_LINKS = [
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [atTop, setAtTop] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
   const { pathname } = useLocation();
+
   useEffect(() => {
     const heroEl = document.getElementById('home');
 
     if (!heroEl) {
       setScrolled(true);
+      setAtTop(true); // no hero to hide against — keep content visible
       return;
     }
 
     const onScroll = () => {
       setScrolled(heroEl.getBoundingClientRect().bottom <= 0);
+      setAtTop(window.scrollY <= 4);
     };
 
     onScroll();
@@ -52,6 +56,7 @@ export default function Navbar() {
   }, [menuOpen]);
 
   const showSolid = scrolled || menuOpen;
+  const showContent = atTop || showSolid; // hides logo/links only while mid-scroll through the hero
 
   return (
     <header
@@ -60,10 +65,15 @@ export default function Navbar() {
         'transition-[background-color,box-shadow] duration-500 ease-in-out',
         showSolid
           ? 'bg-[#1c130e]/98 shadow-[0_10px_30px_-8px_rgba(0,0,0,0.55)] backdrop-blur-sm'
-          : 'none',
+          : 'bg-transparent',
       ].join(' ')}
     >
-      <div className="mx-auto flex max-w-[1560px] items-center justify-between gap-8 px-6 md:grid md:grid-cols-[auto_1fr_auto] md:px-12">
+      <div
+        className={[
+          'mx-auto flex max-w-[1560px] items-center justify-between gap-8 px-6 transition-opacity duration-500 ease-in-out md:grid md:grid-cols-[auto_1fr_auto] md:px-12',
+          showContent ? 'opacity-100' : 'pointer-events-none opacity-0',
+        ].join(' ')}
+      >
         <Link to="/" className="flex items-center" aria-label="Christian Church Athos — Home">
           <img
             src={navLogo}

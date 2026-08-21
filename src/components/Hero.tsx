@@ -46,7 +46,7 @@ export default function Hero() {
   };
 
   return (
-    <section
+    <section id='home'
       className="relative h-screen min-h-160 w-full overflow-hidden bg-[#150d09]"
     >
       {SLIDES.map((slide, i) => {
