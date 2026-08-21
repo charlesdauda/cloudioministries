@@ -50,7 +50,7 @@ const MINISTRY_CARDS: MinistryCard[] = [
 
 const Ministry = () => {
   return (
-    <section className="relative mt-30 overflow-hidden bg-[#f4eadb] py-17.5 sm:py-20 lg:min-h-200 lg:py-22.5">
+    <section className="relative overflow-hidden bg-[#f4eadb] py-17.5 sm:py-20 lg:min-h-200 lg:py-22.5">
       <div className="pointer-events-none absolute inset-0 z-0 opacity-[0.16]">
         <svg
           className="h-full w-full"
