@@ -13,7 +13,7 @@ const Footer = () => {
           <div>
             <h2 className="max-w-125 font-sans text-[42px] font-bold leading-[1.05] tracking-[-0.035em] text-[#f8f5f2] sm:text-[50px]
                 lg:text-[56px]">
-              Teaching Truth.
+              Teaching Truth
               <br />
               Restoring Destinies.
             </h2>
