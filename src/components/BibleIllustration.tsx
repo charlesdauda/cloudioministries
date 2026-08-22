@@ -1,7 +1,7 @@
 
 const BibleIllustration = () => {
   return (
-    <svg viewBox="0 0 420 360" xmlns="http://www.w3.org/2000/svg" className=" pointer-events-none absolute -bottom-8 right-2.5
+    <svg viewBox="0 0 420 360" xmlns="http://www.w3.org/2000/svg" className=" pointer-events-none absolute -bottom-14 right-2.5
         z-0 w-50 text-[#d4d4d4] opacity-65 sm:w-55 lg:right-5 lg:w-62.5" fill="none" aria-hidden="true">
       <path
         d="M210 25V125"

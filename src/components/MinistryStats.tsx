@@ -14,22 +14,22 @@ type CountUpProps = {
 
 const stats: Stat[] = [
   {
-    label: "Countries",
+    label: "Countries Reached",
     value: 40,
     suffix: "+",
   },
   {
-    label: "Sermons",
+    label: "Sermons Taught",
     value: 1000,
     suffix: "+",
   },
   {
-    label: "Years",
+    label: "Years in Ministry",
     value: 20,
     suffix: "+",
   },
   {
-    label: "Members",
+    label: "Church Members",
     value: 5000,
     suffix: "+",
   },
@@ -127,66 +127,15 @@ const MinistryStats = () => {
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative overflow-hidden bg-[#b27a48]"
-    >
-      <div
-        className="
-          mx-auto
-          grid
-          w-full
-          max-w-375
-          grid-cols-2
-          px-6
-          py-17.5
-          sm:px-10
-          sm:py-20
-          lg:grid-cols-4
-          lg:px-16
-          lg:py-26.25
-        "
-      >
+    <section ref={sectionRef} className="relative overflow-hidden bg-[#b27a48]">
+      <div className="mx-auto grid w-full max-w-375 grid-cols-1 px-6 py-14 sm:grid-cols-2 sm:px-10 sm:py-18 lg:grid-cols-4 lg:px-16 lg:py-22">
         {stats.map((stat) => (
-          <div
-            key={stat.label}
-            className="
-              flex
-              flex-col
-              items-center
-              justify-center
-              text-center
-            "
-          >
-            {/* LABEL */}
-            <p
-              className="
-                mb-4
-                font-sans
-                text-[17px]
-                font-bold
-                leading-none
-                text-[#f8f5f2]
-                sm:text-[20px]
-                lg:text-[24px]
-              "
-            >
+          <div key={stat.label} className="flex flex-col items-center justify-center py-5 text-center sm:py-6 lg:py-0">
+            <p className="mb-3 font-sans text-[15px] font-bold leading-none text-[#f8f5f2] sm:text-[17px] lg:text-[20px]">
               {stat.label}
             </p>
 
-            {/* NUMBER */}
-            <div
-              className="
-                font-sans
-                text-[58px]
-                font-bold
-                leading-none
-                tracking-[-0.04em]
-                text-[#f8f5f2]
-                sm:text-[70px]
-                lg:text-[82px]
-              "
-            >
+            <div className=" font-sans text-[46px] font-bold leading-none tracking-[-0.04em] text-[#f8f5f2] sm:text-[54px] lg:text-[64px]">
               <CountUp
                 value={stat.value}
                 suffix={stat.suffix}
