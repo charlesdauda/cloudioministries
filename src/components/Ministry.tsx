@@ -18,15 +18,15 @@ interface MinistryCard {
 const MINISTRY_CARDS: MinistryCard[] = [
   {
     image: ministry1,
-    title: 'Apostolic Ministry',
+    title: 'Apostolic Mandate',
     description:
-      'Advancing God’s kingdom through apostolic leadership, spiritual authority, and a strong foundation in the Word.',
+      "Grounded in the foundation of the apostles and prophets, Dr Cloudio carries a divine assignment to plant, establish, and govern God's purposes on the earth.",
   },
   {
     image: ministry2,
     title: 'Prophetic Ministry',
     description:
-      'Declaring God’s Word with clarity and helping people recognize His purpose, direction, and calling for their lives.',
+      'Through prophetic revelation and spiritual discernment, Dr Cloudio communicates the heart and mind of God, bringing direction, correction, and clarity to nations.',
   },
   {
     image: ministry3,
@@ -38,13 +38,13 @@ const MINISTRY_CARDS: MinistryCard[] = [
     image: ministry4,
     title: 'Mystery Teachings',
     description:
-      'Revealing biblical mysteries and deeper truths of Scripture to strengthen faith and deepen spiritual understanding.',
+      "With a unique grace for unveiling Kingdom mysteries, Dr Cloudio teaches profound spiritual realities that deepen believers' understanding of God and His purposes.",
   },
   {
     image: ministry5,
     title: 'Counseling & Restoration',
     description:
-      'Providing godly counsel and spiritual guidance while helping individuals find restoration, purpose, and renewed hope.',
+      'Through wisdom, mentorship, and pastoral counsel, Dr Cloudio guides individuals towards their purpose navigating their footsteps with faith, clarity, and conviction.',
   },
 ];
 

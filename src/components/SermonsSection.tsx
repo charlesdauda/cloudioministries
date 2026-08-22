@@ -20,19 +20,19 @@ const spotifySermons: SpotifySermon[] = [
   {
     title: "The Secret To Capacity",
     subtitle: "Apostle Dr Cloudio",
-    image: "/sermon-1.jpg",
+    image: "/spotifycover.png",
     spotifyUrl: "https://open.spotify.com/episode/6csNc71SJzQt50HQQMI6pN?si=c4b51f822b9a4ba9",
   },
   {
     title: "The Mystery Of First Fruit",
     subtitle: "Apostle Dr Cloudio",
-    image: "/sermon-2.jpg",
+    image: "/spotifycover.png",
     spotifyUrl: "https://open.spotify.com/episode/4AbLiasNRTYZqTZt132p0n?si=780883b99d2949d9",
   },
   {
     title: "How To Build A Strong Spirit",
     subtitle: "Apostle Dr Cloudio",
-    image: "/sermon-3.jpg",
+    image: "/spotifycover.png",
     spotifyUrl: "https://open.spotify.com/episode/4Zup6j7JHCdpuCsccW42r3?si=2a6d2d43d05f4544",
   },
 ];
