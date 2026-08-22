@@ -3,11 +3,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
 
-import ministry1 from '../assets/images/apsabout.png';
-import ministry2 from '../assets/images/apshero.png';
-import ministry3 from '../assets/images/apshero2.png';
-import ministry4 from '../assets/images/apshero3.png';
-import ministry5 from '../assets/images/apsabout.png';
+import ministry1 from '../assets/images/apsc.png';
+import ministry2 from '../assets/images/apsprophetic.png';
+import ministry3 from '../assets/images/apshealing.png';
+import ministry4 from '../assets/images/apsmystical.png';
+import ministry5 from '../assets/images/apscounseling.png';
 
 interface MinistryCard {
   image: string;

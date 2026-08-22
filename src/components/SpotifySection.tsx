@@ -51,14 +51,13 @@ const SpotifySection = () => {
               Dr. Cloudio (PhD)
             </span>
           </p>
-          <a href="#" 
+          <a href="https://open.spotify.com/show/0sAsHcZqb2L4hZaKIgNB6x?si=3b132e9886354ae5" 
           className="mt-8 inline-flex h-13 w-fit items-center gap-3 bg-[#1DB954] px-7 font-sans text-[13px] font-bold
               uppercase tracking-[0.15em] text-white transition-all duration-300 hover:-translate-y-1 hover:bg-[#20c761]
               hover:shadow-[0_10px_30px_rgba(29,185,84,0.2)]">
             <FaSpotify className="text-[20px]" />
             Listen on Spotify
           </a>
-
           <div className="mt-10 grid grid-cols-1 border-t border-[#252525] pt-8 sm:grid-cols-3 sm:gap-6">
             <div className="flex items-center gap-3">
               <div className="flex h-11 w-11 shrink-0 items-center justify-center border border-[#4a390f] bg-[#0d0e0e]">
@@ -88,9 +87,7 @@ const SpotifySection = () => {
               <span className="font-sans text-[12px] font-medium uppercase tracking-[0.12em] text-[#a9a9a9]">
                 Grow in Truth
               </span>
-
             </div>
-
           </div>
         </div>
       </div>
