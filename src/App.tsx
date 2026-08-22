@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/NavBar';
 import Home from './page/Home';
@@ -7,13 +8,18 @@ import ScrollToTop from './components/ScrolltoTop';
 import MinistryPage from './page/MinistryPage';
 import SermonsPage from './page/SermonsPage';
 import ContactPage from './page/ContactPage';
-
-
+import Loader from './components/Loader';
 
 const App = () => {
+  const [loading, setLoading] = useState(true);
+
+  if (loading) {
+    return <Loader onDone={() => setLoading(false)} />;
+  }
+
   return (
     <BrowserRouter>
-    <ScrollToTop />
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

@@ -74,6 +74,19 @@ function getYouTubeVideoId(url: string): string | null {
   }
   return null;
 }
+
+function getSpotifyEmbedUrl(spotifyUrl: string): string | null {
+  try {
+    const parsed = new URL(spotifyUrl);
+    const match = parsed.pathname.match(/\/(episode|track|show)\/([^/]+)/);
+    if (!match) return null;
+    const [, type, id] = match;
+    return `https://open.spotify.com/embed/${type}/${id}?utm_source=generator&theme=0`;
+  } catch {
+    return null;
+  }
+}
+
 const CORS_PROXY = "https://corsproxy.io/?url=";
 
 function useSpotifyThumbnail(spotifyUrl: string, fallback: string): string {
@@ -243,35 +256,51 @@ const SermonsSection = () => {
   );
 };
 
-const SpotifyCard = ({sermon,}: {sermon: SpotifySermon;}) => {
+const SpotifyCard = ({ sermon }: { sermon: SpotifySermon }) => {
   const thumbnail = useSpotifyThumbnail(sermon.spotifyUrl, sermon.image);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const embedUrl = getSpotifyEmbedUrl(sermon.spotifyUrl);
 
   return (
-    <a href={sermon.spotifyUrl}
-       target="_blank"
-       rel="noopener noreferrer"
-       className="group block min-w-[85%] snap-start bg-white transition-all duration-500 hover:-translate-y-1 
+    <div className="group block min-w-[85%] snap-start bg-white transition-all duration-500 hover:-translate-y-1 
        hover:shadow-[0_20px_50px_rgba(45,30,20,0.10)] sm:min-w-[45%] md:min-w-0">
 
-      <div className="relative aspect-1.5/1 overflow-hidden">
-        <img src={thumbnail}
-             alt={sermon.title}
-             loading="lazy"
-             onError={(e) => {
-               if (e.currentTarget.src !== sermon.image) {
-                 e.currentTarget.src = sermon.image;
-               }
-             }}
-             className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 "/>
-        <div className="absolute inset-0 bg-black/10 transition-colors duration-500 group-hover:bg-black/25"/>
-        <div className="absolute bottom-5 left-5 flex h-11 w-11 items-center justify-center rounded-full bg-white 
-        text-[#202020] shadow-lg transition-transform duration-300 group-hover:scale-110">
-          <Play
-            size={16}
-            fill="currentColor"
-            className="ml-0.5"
+      <div className="relative aspect-1.5/1 overflow-hidden bg-black">
+        {isPlaying && embedUrl ? (
+          <iframe
+            src={`${embedUrl}&autoplay=1`}
+            title={sermon.title}
+            className="h-full w-full border-0"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"
           />
-        </div>
+        ) : (
+          <button
+            type="button"
+            onClick={() => setIsPlaying(true)}
+            aria-label={`Play ${sermon.title}`}
+            className="relative block h-full w-full"
+          >
+            <img src={thumbnail}
+                 alt={sermon.title}
+                 loading="lazy"
+                 onError={(e) => {
+                   if (e.currentTarget.src !== sermon.image) {
+                     e.currentTarget.src = sermon.image;
+                   }
+                 }}
+                 className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 "/>
+            <div className="absolute inset-0 bg-black/10 transition-colors duration-500 group-hover:bg-black/25"/>
+            <span className="absolute bottom-5 left-5 flex h-11 w-11 items-center justify-center rounded-full bg-white 
+            text-[#202020] shadow-lg transition-transform duration-300 group-hover:scale-110">
+              <Play
+                size={16}
+                fill="currentColor"
+                className="ml-0.5"
+              />
+            </span>
+          </button>
+        )}
       </div>
 
       <div className="p-5 sm:p-6">
@@ -287,12 +316,18 @@ const SpotifyCard = ({sermon,}: {sermon: SpotifySermon;}) => {
             className="font-sans text-[13px] text-[#8a7b70]">
             {sermon.subtitle}
           </span>
-          <ExternalLink
-            size={16}
-            className="text-[#b27a48] transition-transform duration-300 group-hover:translate-x-1"/>
+          <a 
+            href={sermon.spotifyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open in Spotify"
+            className="text-[#b27a48] transition-transform duration-300 hover:translate-x-1"
+          >
+            <ExternalLink size={16} />
+          </a>
         </div>
       </div>
-    </a>
+    </div>
   );
 };
 
