@@ -226,7 +226,7 @@ const SermonsSection = () => {
               <ArrowRight size={17} />
             </a>
           </div>
-          <div ref={youtubeRef} className="flexsnap-x snap-mandatory gap-5 overflow-x-auto pb-5 scrollbar-none sm:gap-6 md:grid 
+          <div ref={youtubeRef} className="flex snap-x snap-mandatory gap-5 overflow-x-auto pb-5 scrollbar-none sm:gap-6 md:grid 
           md:grid-cols-3 md:overflow-visible md:pb-0">
             {youtubeSermons.map((sermon) => (
               <YouTubeCard

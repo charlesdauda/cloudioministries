@@ -94,11 +94,11 @@ export default function Navbar() {
                   >
                     {label}
                     <span
-                      className={[
-                        'absolute inset-x-0 bottom-0 h-px origin-left bg-gold-light transition-transform duration-300 ease-out',
-                        active ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100',
-                      ].join(' ')}
-                    />
+                    className={[
+                      'absolute inset-x-0 bottom-0 h-px origin-left bg-white transition-transform duration-300 ease-out',
+                      active ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100',
+                    ].join(' ')}
+                  />
                   </Link>
                 </li>
               );
@@ -127,15 +127,27 @@ export default function Navbar() {
           menuOpen ? 'max-h-90 opacity-100' : 'max-h-0 opacity-0',
         ].join(' ')}
       >
-        <nav className="border-t border-white/10 bg-[#1c130e] px-6 pb-8 pt-6">
+         <nav className="border-t border-white/10 bg-[#1c130e] px-6 pb-8 pt-6">
           <ul className="flex flex-col items-center gap-6">
-            {NAV_LINKS.map(({ label, to }) => (
-              <li key={label}>
-                <Link to={to} className="font-display text-[18px] tracking-[0.01em] text-white/95 transition-colors duration-300 hover:text-gold-light">
-                  {label}
-                </Link>
-              </li>
-            ))}
+            {NAV_LINKS.map(({ label, to }) => {
+              const active = pathname === to;
+              return (
+                <li key={label}>
+                  <Link
+                    to={to}
+                    className="group relative inline-block pb-2 font-display text-[18px] leading-none tracking-[0.01em] text-white/95 transition-colors duration-300 hover:text-gold-light"
+                  >
+                    {label}
+                    <span
+                      className={[
+                        'absolute inset-x-0 bottom-0 h-px origin-left bg-white transition-transform duration-300 ease-out',
+                        active ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100',
+                      ].join(' ')}
+                    />
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </nav>
       </div>
