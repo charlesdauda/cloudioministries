@@ -32,7 +32,7 @@ const MINISTRY_CARDS: MinistryCard[] = [
     image: ministry3,
     title: 'Healing & Deliverance',
     description:
-      'Ministering healing, freedom, and restoration through prayer, faith, and the power of the Holy Spirit.',
+      'Ministering healing and restoration through prayer, faith, and the power of the Holy Spirit. Bringing the oppressed to Christ.',
   },
   {
     image: ministry4,
@@ -44,7 +44,7 @@ const MINISTRY_CARDS: MinistryCard[] = [
     image: ministry5,
     title: 'Counseling & Restoration',
     description:
-      'Through wisdom, mentorship, and pastoral counsel, Dr Cloudio guides individuals towards their purpose navigating their footsteps with faith, clarity, and conviction.',
+      'Through wisdom, mentorship, and pastoral counsel, Dr Cloudio guides individuals towards their purpose navigating their footsteps with faith and conviction.',
   },
 ];
 
@@ -85,7 +85,7 @@ const Ministry = () => {
           <span className="mb-5 block font-sans text-[14px] font-bold tracking-[0.14em] text-[#303030] sm:text-[15px] lg:text-[16px]">
             MINISTRY
           </span>
-          <h2 className="mx-auto max-w-225 font-sans text-[39px] font-bold leading-[1.08] tracking-[-0.035em] text-[#202020]sm:text-[48px]
+          <h2 className="mx-auto max-w-225 font-sans text-[39px] font-bold leading-[1.08] tracking-[-0.035em] text-[#202020] sm:text-[48px]
               lg:text-[55px]">
             Discover the Ministry
             <br />

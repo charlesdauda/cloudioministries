@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 type PageHeaderProps = {
   title: string;
   breadcrumb?: string;
@@ -11,11 +13,11 @@ const PageHeader = ({ title, breadcrumb = "Home"}: PageHeaderProps) => {
           <h1 className="font-sans text-[44px] font-bold leading-[1.1] tracking-[-0.04em] text-[#202020] sm:text-[54px] lg:text-[72px]" >
             {title}
           </h1>
-          <div className="mt-5 flex items-center justify-center gap-3 font-sans text-[16px] font-normal text-[#202020] sm:text-[18px]">
-            <span>Home</span>
+          <nav aria-label="Breadcrumb" className="mt-5 flex items-center justify-center gap-3 font-sans text-[16px] font-normal text-[#202020] sm:text-[18px]">
+            <Link to="/" className="transition-colors hover:text-[#b27a48]">Home</Link>
             <span className="text-[#876f5f]">/</span>
             <span>{breadcrumb}</span>
-          </div>
+          </nav>
 
         </div>
       </div>
