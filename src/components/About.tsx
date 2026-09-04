@@ -12,6 +12,7 @@ const About = () => {
                 src={aboutImage}
                 alt="Christian studying the Holy Bible"
                 className="block h-full w-full object-cover object-center"
+                loading="lazy"
               />
             </div>
 

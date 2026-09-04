@@ -15,7 +15,9 @@ const SpotifySection = () => {
           <img
             src={spotifyImage}
             alt="Dr. Cloudio ministering"
-            className="absolute inset-0 h-full w-full object-cover object-center"/>
+            className="absolute inset-0 h-full w-full object-cover object-center"
+            loading="lazy"
+          />
           <div className="absolute inset-0 bg-black/35" />
           <div className="absolute inset-0 bg-linear-to-r from-black/10 via-transparent to-black/60"/>
         </div>

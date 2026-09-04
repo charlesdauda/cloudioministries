@@ -79,6 +79,7 @@ export default function Navbar() {
             src={navLogo}
             alt="Christian Church Athos"
             className="h-9 w-auto object-contain transition-transform duration-500 md:h-10"
+            loading="lazy"
           />
         </Link>
 

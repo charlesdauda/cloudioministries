@@ -10,6 +10,7 @@ const WordUnmuted = () => {
             src={WordImg}
             alt="Word Unmuted Podcast"
             className="h-auto w-full object-cover"
+            loading="lazy"
           />
         </div>
         <div className="max-w-162.5">
